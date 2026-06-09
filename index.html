@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Sparkle Resin Art | Amatullah – Custom Resin Creations</title>
+  <!-- Google Fonts + smooth icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0A0A0A;   /* deep charcoal base */
+      font-family: 'Inter', sans-serif;
+      color: #ece7e1;
+      scroll-behavior: smooth;
+    }
+
+    /* subtle gold accent */
+    :root {
+      --gold: #D4AF37;
+      --rose-gold: #E0BFB3;
+      --dark-bg: #0A0A0A;
+      --card-bg: #141414;
+      --cream: #F9F6F0;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ===== HEADER & NAV ===== */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      flex-wrap: wrap;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .logo h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+    .logo p {
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-top: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #ece7e1;
+      font-weight: 500;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* buttons */
+    .btn-gold {
+      background: transparent;
+      border: 1.5px solid var(--gold);
+      color: var(--gold);
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-gold:hover {
+      background: var(--gold);
+      color: #0A0A0A;
+    }
+
+    .btn-rose {
+      background: var(--rose-gold);
+      border: none;
+      color: #0A0A0A;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-rose:hover {
+      background: #cfa394;
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 70px 0 60px;
+    }
+    .hero-content {
+      flex: 1.2;
+    }
+    .hero-badge {
+      color: var(--gold);
+      letter-spacing: 3px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .hero-content h2 {
+      font-size: 3.2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero-content p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 28px;
+      color: #ccc;
+      max-width: 90%;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 20px;
+    }
+    .stat span {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .hero-image {
+      flex: 0.9;
+      background: linear-gradient(145deg, #1e1a15, #0a0a0a);
+      border-radius: 32px;
+      padding: 12px;
+      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.5);
+    }
+    .hero-image img {
+      width: 100%;
+      border-radius: 24px;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+      background: #2b241d;
+    }
+
+    /* section titles */
+    .section-title {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      margin: 60px 0 30px;
+      position: relative;
+    }
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 2px;
+      background: var(--gold);
+      margin: 12px auto 0;
+    }
+
+    /* gallery grid (categories) */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 32px;
+      margin: 40px 0;
+    }
+    .gallery-card {
+      background: var(--card-bg);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.3s;
+      border: 1px solid rgba(212,175,55,0.2);
+    }
+    .gallery-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.6);
+      border-color: rgba(212,175,55,0.5);
+    }
+    .card-img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #1f1b17;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 3rem;
+      background-size: cover;
+      background-position: center;
+    }
+    .card-info {
+      padding: 20px;
+    }
+    .card-info h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .card-info p {
+      color: #b9b3a8;
+      font-size: 0.9rem;
+    }
+
+    /* custom order form */
+    .form-section {
+      background: #11100e;
+      border-radius: 48px;
+      padding: 48px 40px;
+      margin: 40px 0 60px;
+      border: 1px solid rgba(212,175,55,0.25);
+    }
+    .form-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+    .form-left {
+      flex: 1.2;
+    }
+    .form-right {
+      flex: 1;
+      background: rgba(255,255,245,0.02);
+      border-radius: 28px;
+      padding: 24px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+    input, textarea, select {
+      width: 100%;
+      background: #1e1c19;
+      border: 1px solid #3a352e;
+      padding: 12px 16px;
+      border-radius: 24px;
+      color: #f0ede8;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: 0.2s;
+    }
+    input:focus, textarea:focus {
+      border-color: var(--gold);
+    }
+    .upload-area {
+      border: 1px dashed var(--gold);
+      background: #1e1c19;
+      border-radius: 28px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .review-card {
+      background: #181614;
+      padding: 24px;
+      border-radius: 28px;
+      margin-bottom: 20px;
+      border-left: 4px solid var(--gold);
+    }
+    .stars {
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .customer-name {
+      font-weight: 600;
+      margin-top: 12px;
+      color: var(--rose-gold);
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: #141210;
+      padding: 24px;
+      border-radius: 32px;
+      margin-top: 30px;
+    }
+    footer {
+      border-top: 1px solid rgba(212,175,55,0.2);
+      text-align: center;
+      padding: 40px 0;
+      margin-top: 40px;
+      color: #7e776e;
+    }
+    .social-icons a {
+      color: #ece7e1;
+      margin: 0 12px;
+      font-size: 1.6rem;
+      transition: 0.2s;
+    }
+    .social-icons a:hover {
+      color: var(--gold);
+    }
+    .flex-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @media (max-width: 800px) {
+      .nav-links { margin-top: 15px; gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+      .hero-content h2 { font-size: 2.4rem; }
+    }
+    button[type="submit"] {
+      width: 100%;
+      margin-top: 8px;
+    }
+    .msg-success {
+      background: #1f3a2b;
+      color: var(--gold);
+      padding: 12px;
+      border-radius: 30px;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">
+      <h1>sparkle resin art</h1>
+      <p>by Amatullah ✦ Porbandar</p>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#custom">Custom Order</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#custom" style="text-decoration: none;"><button class="btn-gold">DM to Order</button></a>
+  </nav>
+
+  <!-- Hero Section (Home) -->
+  <section id="home">
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">✦ HANDMADE WITH RESIN ✦</div>
+        <h2>Preserve moments,<br>crafted in resin.</h2>
+        <p>Kheti Amatullah — creating bespoke resin keepsakes from Porbandar. Custom photo frames, engagement trays, flower preservation & more. Each piece tells your story with a luminous, artistic touch.</p>
+        <div class="hero-stats">
+          <div class="stat"><span>1k+</span><br>Followers</div>
+          <div class="stat"><span>100+</span><br>Custom pieces</div>
+          <div class="stat"><span>❤️</span><br>Porbandar</div>
+        </div>
+        <div style="display: flex; gap: 16px; margin-top: 28px;">
+          <button class="btn-rose" onclick="location.href='#portfolio'">Explore Gallery</button>
+          <button class="btn-gold" onclick="location.href='#custom'">Order Custom</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <!-- representative resin art placeholder (abstract golden shimmer) -->
+        <img src="https://placehold.co/600x600/2c241e/D4AF37?text=✨+Resin+Art+Showcase+✨" alt="Resin Art by Amatullah" style="background:#1f1913;">
+      </div>
+    </div>
+  </section>
+
+  <!-- Product / Portfolio categories -->
+  <section id="portfolio">
+    <div class="section-title">✦ Signature Collections ✦</div>
+    <div class="gallery-grid">
+      <!-- Custom Photo Frames -->
+      <div class="gallery-card">
+        <div class="card-img" style="background-image: url('https://placehold.co/500x400/2b231d/D4AF37?text=✨+Photo+Frames'); background-size: cover; background-position: center;"></div>
+        <div class="card-info">
+          <h3>📸 Custom Photo Frames</h3>
+          <p>Elegant resin frames with dried flowers, gold flakes, personalized messages. Cherish your memories forever.</p>
+        </div>
+      </div>
+      <!-- Engagement Trays -->
+      <div class="gallery-card">
+        <div class="card-img" style="background-image: url('https://placehold.co/500x400/2b231d/DFB88C?text=💍+Engagement+Tray'); background-size: cover;"></div>
+        <div class="card-info">
+          <h3>💍 Engagement Trays</h3>
+          <p>Luxury resin trays for ring displays, wedding props. Custom colors, glitter, and floral embedments.</p>
+        </div>
+      </div>
+      <!-- Preserved Flowers (pendants/blocks) -->
+      <div class="gallery-card">
+        <div class="card-img" style="background-image: url('https://placehold.co/500x400/2b231d/E6C7A2?text=🌹+Preserved+Rose'); background-size: cover;"></div>
+        <div class="card-info">
+          <h3>🌿 Preserved Flower Items</h3>
+          <p>"Preserving the First Rose he gave" — special pendants, paperweights, or shadow boxes with real blooms.</p>
+        </div>
+      </div>
+      <!-- More custom resin things -->
+      <div class="gallery-card">
+        <div class="card-img" style="background-image: url('https://placehold.co/500x400/2b231d/C9A87C?text=🎨+Resin+Art+Object'); background-size: cover;"></div>
+        <div class="card-info">
+          <h3>✨ Bespoke Resin Art</h3>
+          <p>Coasters, trays, abstract wall art, jewellery dishes – made to match your vision.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Order Form Section -->
+  <section id="custom">
+    <div class="section-title">✦ Request a Custom Piece ✦</div>
+    <div class="form-section">
+      <div class="form-grid">
+        <div class="form-left">
+          <h3 style="font-size: 1.8rem; margin-bottom: 8px;">Tell your idea</h3>
+          <p style="margin-bottom: 24px;">Describe your dream resin piece — from engagement trays to preserved flowers. I’ll bring it to life.</p>
+          <form id="customOrderForm">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" id="custName" required placeholder="e.g., Aanya Mehta">
+            </div>
+            <div class="form-group">
+              <label>Email / Instagram handle *</label>
+              <input type="text" id="custContact" required placeholder="@ or email">
+            </div>
+            <div class="form-group">
+              <label>Category</label>
+              <select id="custCategory">
+                <option>Photo Frame</option>
+                <option>Engagement Tray</option>
+                <option>Preserved Flower (pendant/block)</option>
+                <option>Other Resin Art</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Describe your custom request (colors, size, special elements) *</label>
+              <textarea rows="3" id="custDescription" placeholder="e.g., 'I want to preserve a dried rose in a pendant with rose gold flakes...'"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Upload reference photo (optional)</label>
+              <div class="upload-area" id="uploadTrigger">
+                <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; margin-bottom: 6px; display: block;"></i>
+                <span>Click to upload image</span>
+                <input type="file" id="photoRef" accept="image/*" style="display: none;">
+              </div>
+              <small style="color:#aaa;">Max 5MB, jpg/png</small>
+              <div id="fileNameDisplay" style="margin-top: 8px; font-size: 0.8rem;"></div>
+            </div>
+            <button type="submit" class="btn-rose" style="width:100%; margin-top: 20px;">Send Custom Request 💌</button>
+            <div id="formMessage"></div>
+          </form>
+        </div>
+        <div class="form-right">
+          <h3><i class="fas fa-sparkle" style="color: var(--gold);"></i> Why order custom?</h3>
+          <ul style="margin: 20px 0 0 20px; line-height: 1.8;">
+            <li>🌸 Handcrafted with premium epoxy</li>
+            <li>💎 Personalised with dried flowers, glitters, charms</li>
+            <li>✨ Preserve wedding bouquets, first roses, baby memorabilia</li>
+            <li>📦 Safe shipping from Porbandar</li>
+          </ul>
+          <div class="contact-info" style="margin-top: 28px;">
+            <i class="fab fa-instagram" style="color: var(--gold);"></i> <strong>DM on Instagram:</strong> @sparkle_resin_art_by_amatullah
+            <i class="fas fa-map-marker-alt"></i> <strong>Based in Porbandar, Gujarat</strong>
+            <i class="fas fa-heart"></i> Creating joy, one resin piece at a time.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews Section -->
+  <section id="reviews">
+    <div class="section-title">✦ Happy Customer Stories ✦</div>
+    <div class="gallery-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 24px;">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Absolutely in love with the custom engagement tray! It captured our names with gold leaf, beyond elegant. Amatullah is an artist."</p>
+        <div class="customer-name">— Priya & Rohan</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Preserved the first rose my husband gave me into a gorgeous pendant. It’s emotional & stunning. Thank you so much!"</p>
+        <div class="customer-name">— Devanshi S.</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"High quality photo frame, sparkling resin work. The team was so sweet & communicative. Highly recommend!"</p>
+        <div class="customer-name">— Meet J. (Porbandar)</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Best resin art in Porbandar! I love my new resin tray for my vanity. Fast delivery and exquisite finishing."</p>
+        <div class="customer-name">— Kinjal M.</div>
+      </div>
+    </div>
+    <div style="text-align: center; margin: 20px 0 30px;">
+      <i class="fas fa-quote-left" style="color: var(--gold);"></i> "Preserving the First Rose he gave" — a signature keepsake.
+    </div>
+  </section>
+
+  <!-- Contact & Socials + Final location -->
+  <section id="contact">
+    <div class="flex-row" style="align-items: start; gap: 40px; margin: 40px 0 30px;">
+      <div style="flex:1; background: #141210; border-radius: 32px; padding: 32px;">
+        <h3><i class="fas fa-envelope"></i> Get in touch</h3>
+        <p style="margin: 12px 0;">Prefer email? Drop a message or DM directly.</p>
+        <form id="contactFormSimple">
+          <input type="text" placeholder="Your name" id="contactName" style="margin-bottom: 12px;">
+          <input type="email" placeholder="Your email" id="contactEmail" style="margin-bottom: 12px;">
+          <textarea rows="3" placeholder="Tell us about your resin vision..." id="contactMsg"></textarea>
+          <button type="submit" class="btn-gold" style="margin-top: 16px; width:100%">Send Message ✨</button>
+          <div id="contactFormMsg"></div>
+        </form>
+      </div>
+      <div style="flex:1; background: #141210; border-radius: 32px; padding: 32px;">
+        <h3><i class="fab fa-instagram"></i> Connect on Instagram</h3>
+        <div class="social-icons" style="margin: 20px 0;">
+          <a href="https://instagram.com/sparkle_resin_art_by_amatullah" target="_blank"><i class="fab fa-instagram"></i> @sparkle_resin_art_by_amatullah</a>
+        </div>
+        <p><i class="fas fa-map-pin"></i> Porbandar, Gujarat — Shipping across India</p>
+        <p><i class="fas fa-clock"></i> Response: within 24h on DM</p>
+        <div style="margin-top: 28px;">
+          <button class="btn-rose" onclick="window.open('https://instagram.com/sparkle_resin_art_by_amatullah', '_blank')">DM on Instagram →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>✨ Sparkle Resin Art by Amatullah — handmade resin treasures from Porbandar ✨</p>
+    <p>© 2025 | Custom orders open | Preserve your memories in resin</p>
+    <div class="social-icons" style="margin-top: 16px;">
+      <a href="https://instagram.com/sparkle_resin_art_by_amatullah" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="far fa-heart"></i></a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Fake image upload preview & filename
+  const uploadTrigger = document.getElementById('uploadTrigger');
+  const fileInput = document.getElementById('photoRef');
+  const fileNameDisplay = document.getElementById('fileNameDisplay');
+
+  uploadTrigger.addEventListener('click', () => {
+    fileInput.click();
+  });
+  fileInput.addEventListener('change', function(e) {
+    if(this.files.length){
+      fileNameDisplay.innerHTML = `<i class="fas fa-check-circle" style="color:#D4AF37"></i> ${this.files[0].name}`;
+    } else {
+      fileNameDisplay.innerHTML = '';
+    }
+  });
+
+  // Custom order submit
+  const orderForm = document.getElementById('customOrderForm');
+  const formMessageDiv = document.getElementById('formMessage');
+
+  orderForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('custName').value.trim();
+    const contact = document.getElementById('custContact').value.trim();
+    const desc = document.getElementById('custDescription').value.trim();
+    if(!name || !contact || !desc) {
+      formMessageDiv.innerHTML = '<div class="msg-success" style="background:#2e2520; color:#D4AF37;">⚠️ Please fill all required fields (name, contact, description).</div>';
+      return;
+    }
+    // Simulate sending order request
+    formMessageDiv.innerHTML = '<div class="msg-success">✨ Request sent! Amatullah will reach out via DM/Email within 24h. Thank you for choosing sparkle resin art ✨</div>';
+    orderForm.reset();
+    if(fileInput) fileInput.value = '';
+    fileNameDisplay.innerHTML = '';
+    setTimeout(() => {
+      formMessageDiv.innerHTML = '';
+    }, 5000);
+  });
+
+  // Simple contact form
+  const simpleContact = document.getElementById('contactFormSimple');
+  const contactMsgDiv = document.getElementById('contactFormMsg');
+  if(simpleContact){
+    simpleContact.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nameC = document.getElementById('contactName').value;
+      const emailC = document.getElementById('contactEmail').value;
+      const msgC = document.getElementById('contactMsg').value;
+      if(!nameC || !emailC){
+        contactMsgDiv.innerHTML = '<div style="color:#D4AF37; margin-top:12px;">Please enter name and email.</div>';
+        return;
+      }
+      contactMsgDiv.innerHTML = '<div style="color:#D4AF37; margin-top:12px;">💌 Thanks! We’ll get back to you soon. Meanwhile DM on Instagram.</div>';
+      simpleContact.reset();
+      setTimeout(() => contactMsgDiv.innerHTML = '', 4000);
+    });
+  }
+
+  // smooth anchor scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if(targetId === "#" || targetId === "") return;
+      const targetElem = document.querySelector(targetId);
+      if(targetElem) {
+        e.preventDefault();
+        targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
