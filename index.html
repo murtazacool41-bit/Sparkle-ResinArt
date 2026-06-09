@@ -3,86 +3,606 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sparkle Resin Art | Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>SPARKLE RESIN | Amatullah — Luxury Resin Atelier</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #0A0A0A; font-family: 'Inter', sans-serif; color: #ece7e1; }
-    :root { --gold: #D4AF37; --card-bg: #141414; }
-    .container { max-width: 1280px; margin: 0 auto; padding: 0 28px; }
-    
-    /* Header & Nav */
-    .brand-header { text-align: center; padding: 40px 0 20px; border-bottom: 2px solid rgba(212,175,55,0.3); }
-    .brand-name { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 4px; }
-    .brand-tagline { font-size: 0.8rem; letter-spacing: 3px; color: #b9b3a8; margin-top: 8px; }
-    nav { display: flex; justify-content: center; gap: 3rem; padding: 24px 0; flex-wrap: wrap; border-bottom: 1px solid rgba(212,175,55,0.2); }
-    nav a { text-decoration: none; color: #ece7e1; font-weight: 500; transition: 0.3s; font-size: 0.95rem; }
-    nav a:hover { color: var(--gold); }
-    
-    /* Hero */
-    .hero { display: flex; flex-wrap: wrap; align-items: center; gap: 50px; padding: 60px 0; }
-    .hero-content { flex: 1; }
-    .hero-content h2 { font-size: 3.5rem; font-family: 'Cormorant Garamond', serif; line-height: 1.2; margin-bottom: 20px; }
-    .hero-content p { color: #ccc; margin-bottom: 30px; }
-    .hero-image { flex: 1; border-radius: 28px; overflow: hidden; }
-    .hero-image img { width: 100%; height: auto; display: block; }
-    .btn-gold { background: transparent; border: 1.5px solid var(--gold); color: var(--gold); padding: 12px 28px; border-radius: 40px; font-weight: 600; cursor: pointer; transition: 0.3s; }
-    .btn-gold:hover { background: var(--gold); color: #0A0A0A; }
-    .btn-rose { background: #E0BFB3; border: none; color: #0A0A0A; padding: 12px 28px; border-radius: 40px; font-weight: 600; cursor: pointer; transition: 0.3s; }
-    .stats { display: flex; gap: 40px; margin: 30px 0; }
-    .stats span { font-size: 1.8rem; font-weight: 700; color: var(--gold); }
-    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin: 50px 0; }
-    .feature-card { background: var(--card-bg); padding: 30px; border-radius: 24px; text-align: center; border: 1px solid rgba(212,175,55,0.2); }
-    .feature-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 15px; }
-    footer { text-align: center; padding: 40px 0; border-top: 1px solid rgba(212,175,55,0.2); margin-top: 50px; color: #7e776e; }
-    @media (max-width: 800px) { .hero { flex-direction: column; } .hero-content h2 { font-size: 2.5rem; } }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #FFFFFF;
+      font-family: 'Montserrat', sans-serif;
+      color: #1A1A1A;
+      scroll-behavior: smooth;
+    }
+
+    /* Luxury Color Palette */
+    :root {
+      --gold: #C6A43F;
+      --gold-light: #DDB95C;
+      --black: #111111;
+      --white: #FFFFFF;
+      --cream: #F8F6F2;
+      --gray-light: #E8E5DF;
+      --gray-text: #6B6B6B;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+
+    /* ========== LUXURY NAVIGATION ========== */
+    .top-bar {
+      border-bottom: 1px solid var(--gray-light);
+      padding: 15px 0;
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      color: var(--gray-text);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 0;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: 6px;
+      color: var(--black);
+      text-transform: uppercase;
+    }
+    .logo span {
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      display: block;
+      color: var(--gold);
+      font-weight: 300;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 3rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--black);
+      font-weight: 400;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: 0.3s;
+    }
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-icons i {
+      font-size: 1.1rem;
+      color: var(--black);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .nav-icons i:hover {
+      color: var(--gold);
+    }
+
+    /* ========== HERO — Luxury Editorial ========== */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 85vh;
+      gap: 60px;
+      padding: 40px 0 80px;
+    }
+    .hero-content {
+      flex: 1;
+    }
+    .hero-label {
+      font-size: 0.7rem;
+      letter-spacing: 5px;
+      color: var(--gold);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .hero-content h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.5rem;
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 25px;
+      color: var(--black);
+    }
+    .hero-content p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--gray-text);
+      margin-bottom: 35px;
+      max-width: 85%;
+    }
+    .btn-luxury {
+      background: transparent;
+      border: 1px solid var(--black);
+      color: var(--black);
+      padding: 14px 40px;
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+    .btn-luxury:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+    .hero-image {
+      flex: 1;
+      background: var(--cream);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: grayscale(10%);
+    }
+
+    /* ========== LUXURY STATS BAR ========== */
+    .stats-bar {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid var(--gray-light);
+      border-bottom: 1px solid var(--gray-light);
+      padding: 30px 0;
+      margin: 40px 0;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--gold);
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      color: var(--gray-text);
+      margin-top: 5px;
+    }
+
+    /* ========== SECTION TITLES — Chanel Style ========== */
+    .section-title {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      margin: 80px 0 20px;
+      color: var(--black);
+    }
+    .section-subtitle {
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      color: var(--gold);
+      margin-bottom: 50px;
+      text-transform: uppercase;
+    }
+
+    /* ========== PRODUCT GRID — Luxury Gallery ========== */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--gray-light);
+      margin: 50px 0;
+    }
+    .product-card {
+      background: var(--white);
+      padding: 40px 30px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .product-card:hover {
+      background: var(--cream);
+    }
+    .product-icon {
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .product-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .product-card p {
+      font-size: 0.8rem;
+      color: var(--gray-text);
+      line-height: 1.5;
+    }
+
+    /* ========== PORTFOLIO — Asymmetrical Luxury Grid ========== */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--gray-light);
+      margin: 50px 0;
+    }
+    .portfolio-item {
+      background: var(--white);
+      aspect-ratio: 3/4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--gray-text);
+      text-align: center;
+      padding: 20px;
+      transition: 0.3s;
+    }
+    .portfolio-item:hover {
+      background: var(--cream);
+    }
+    .portfolio-item i {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 15px;
+      display: block;
+    }
+    .portfolio-wide {
+      grid-column: span 2;
+    }
+
+    /* ========== CUSTOM ORDER FORM ========== */
+    .form-section {
+      background: var(--cream);
+      padding: 60px;
+      margin: 60px 0;
+    }
+    .form-grid {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+    .form-info {
+      flex: 1;
+    }
+    .form-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+    .form-info p {
+      color: var(--gray-text);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .form-fields {
+      flex: 1.5;
+    }
+    input, textarea, select {
+      width: 100%;
+      background: var(--white);
+      border: 1px solid var(--gray-light);
+      padding: 15px 18px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      margin-bottom: 15px;
+      transition: 0.3s;
+    }
+    input:focus, textarea:focus {
+      border-color: var(--gold);
+      outline: none;
+    }
+    .upload-area {
+      border: 1px dashed var(--gold);
+      background: var(--white);
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+    .btn-submit {
+      background: var(--black);
+      border: none;
+      color: var(--white);
+      padding: 15px;
+      width: 100%;
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn-submit:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    /* ========== TESTIMONIALS ========== */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin: 50px 0;
+    }
+    .testimonial-card {
+      border-left: 2px solid var(--gold);
+      padding: 30px;
+      background: var(--cream);
+    }
+    .quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+    .customer-name {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      color: var(--gold);
+    }
+
+    /* ========== INSTAGRAM FEED ========== */
+    .insta-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 2px;
+      background: var(--gray-light);
+      margin: 50px 0;
+    }
+    .insta-item {
+      aspect-ratio: 1;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--gray-text);
+    }
+
+    /* ========== FOOTER — Luxury ========== */
+    footer {
+      background: var(--black);
+      color: var(--gray-light);
+      padding: 60px 0 40px;
+      margin-top: 80px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+    .footer-col h4 {
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+      color: var(--gold);
+    }
+    .footer-col p {
+      font-size: 0.75rem;
+      line-height: 1.6;
+      color: #888;
+    }
+    .copyright {
+      text-align: center;
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      border-top: 1px solid #2A2A2A;
+      padding-top: 30px;
+      color: #555;
+    }
+
+    @media (max-width: 900px) {
+      .container { padding: 0 25px; }
+      .hero { flex-direction: column; }
+      .hero-content h1 { font-size: 3rem; }
+      .product-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .testimonial-grid { grid-template-columns: 1fr; }
+      .insta-grid { grid-template-columns: repeat(3, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
   </style>
 </head>
 <body>
+
+<!-- Luxury Top Bar -->
+<div class="top-bar">
+  COMPLIMENTARY SHIPPING ON ORDERS ABOVE ₹5000
+</div>
+
 <div class="container">
-  <div class="brand-header">
-    <div class="brand-name">SPARKLE RESIN ART BY AMATULLAH</div>
-    <div class="brand-tagline">✦ HANDCRAFTED KEEPSAKES ✦ PORBANDAR ✦</div>
-  </div>
+  <!-- Navigation -->
   <nav>
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="order.html">Custom Order</a>
-    <a href="reviews.html">Reviews</a>
-    <a href="contact.html">Contact</a>
+    <div class="logo">
+      SPARKLE<br><span>RESIN ART</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#portfolio">Collection</a></li>
+      <li><a href="#custom">Commission</a></li>
+      <li><a href="#reviews">Journal</a></li>
+      <li><a href="#contact">Atelier</a></li>
+    </ul>
+    <div class="nav-icons">
+      <i class="far fa-heart"></i>
+      <i class="far fa-user"></i>
+      <i class="far fa-shopping-bag"></i>
+    </div>
   </nav>
 
-  <div class="hero">
-    <div class="hero-content">
-      <h2>Transform Your Precious Memories<br>Into <span style="color: var(--gold);">Timeless Resin Art</span></h2>
-      <p>Handcrafted resin keepsakes, wedding floral preservation, engagement trays, photo frames and custom luxury gifts. Each piece tells your story.</p>
-      <div class="stats">
-        <div><span>500+</span><br>Orders</div>
-        <div><span>4.9⭐</span><br>Rating</div>
-        <div><span>🌍</span><br>Worldwide</div>
+  <!-- Hero Section -->
+  <section id="home">
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-label">BESPOKE RESIN ATELIER</div>
+        <h1>Transform memories<br>into timeless art</h1>
+        <p>Handcrafted resin keepsakes, wedding floral preservation, engagement trays, and custom luxury gifts. Each piece tells your story.</p>
+        <button class="btn-luxury" onclick="location.href='#custom'">Request an Appointment</button>
       </div>
-      <div style="display: flex; gap: 16px;">
-        <button class="btn-rose" onclick="location.href='portfolio.html'">View Collection</button>
-        <button class="btn-gold" onclick="location.href='order.html'">Custom Order</button>
+      <div class="hero-image">
+        <img src="https://images.pexels.com/photos/5904786/close-up-of-resin-art-with-dried-flowers-5904786.jpg?auto=compress&cs=tinysrgb&w=800" alt="Luxury Resin Art">
       </div>
     </div>
-    <div class="hero-image">
-      <img src="https://images.pexels.com/photos/5904786/close-up-of-resin-art-with-dried-flowers-5904786.jpg?auto=compress&cs=tinysrgb&w=600" alt="Resin Art Demo">
+  </section>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-number">500+</div><div class="stat-label">PIECES CREATED</div></div>
+    <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">HANDMADE</div></div>
+    <div class="stat-item"><div class="stat-number">4.9⭐</div><div class="stat-label">CLIENT RATING</div></div>
+    <div class="stat-item"><div class="stat-number">🌍</div><div class="stat-label">WORLDWIDE</div></div>
+  </div>
+
+  <!-- Product Categories -->
+  <div class="section-title">Les Collections</div>
+  <div class="section-subtitle">SIGNATURE CREATIONS</div>
+  <div class="product-grid">
+    <div class="product-card"><div class="product-icon"><i class="fas fa-flower"></i></div><h3>Wedding Preservation</h3><p>Preserve your bouquet forever in crystal resin</p></div>
+    <div class="product-card"><div class="product-icon"><i class="fas fa-ring"></i></div><h3>Engagement Trays</h3><p>Luxury ring display heirlooms</p></div>
+    <div class="product-card"><div class="product-icon"><i class="fas fa-heart"></i></div><h3>Memorial Keepsakes</h3><p>Honor loved ones with art</p></div>
+  </div>
+
+  <!-- Portfolio Gallery -->
+  <section id="portfolio">
+    <div class="section-title">Recent Atelier Works</div>
+    <div class="section-subtitle">FROM OUR STUDIO</div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item"><div><i class="fas fa-crown"></i><br>Custom Frame</div></div>
+      <div class="portfolio-item"><div><i class="fas fa-gem"></i><br>Engagement Tray</div></div>
+      <div class="portfolio-item portfolio-wide"><div><i class="fas fa-bouquet"></i><br>Wedding Bouquet Preservation</div></div>
+      <div class="portfolio-item"><div><i class="fas fa-heartbeat"></i><br>Memorial Piece</div></div>
+      <div class="portfolio-item"><div><i class="fas fa-feather-alt"></i><br>Resin Pendant</div></div>
     </div>
-  </div>
+  </section>
 
-  <div class="feature-grid">
-    <div class="feature-card"><i class="fas fa-flower"></i><h3>Wedding Preservation</h3><p>Preserve your bouquet forever</p></div>
-    <div class="feature-card"><i class="fas fa-ring"></i><h3>Engagement Trays</h3><p>Luxury ring display pieces</p></div>
-    <div class="feature-card"><i class="fas fa-heart"></i><h3>Memorial Keepsakes</h3><p>Honor loved ones with art</p></div>
-    <div class="feature-card"><i class="fas fa-gift"></i><h3>Custom Gifts</h3><p>Personalized for any occasion</p></div>
-  </div>
+  <!-- Custom Order Form -->
+  <section id="custom">
+    <div class="form-section">
+      <div class="form-grid">
+        <div class="form-info">
+          <h3>Commission<br>Your Piece</h3>
+          <p>Share your vision with us. Our atelier will respond within 24 hours to begin the creative journey.</p>
+          <p style="margin-top: 20px;"><i class="fab fa-instagram" style="color: var(--gold); margin-right: 10px;"></i> @sparkle_resin_art_by_amatullah</p>
+          <p><i class="fas fa-map-pin" style="color: var(--gold); margin-right: 10px;"></i> Porbandar, Gujarat</p>
+        </div>
+        <div class="form-fields">
+          <form id="luxuryOrderForm">
+            <input type="text" id="name" placeholder="FULL NAME *" required>
+            <input type="email" id="email" placeholder="EMAIL / INSTAGRAM *" required>
+            <select id="category">
+              <option>Wedding Flower Preservation</option>
+              <option>Custom Photo Frame</option>
+              <option>Engagement Tray</option>
+              <option>Memorial Keepsake</option>
+            </select>
+            <textarea rows="4" id="details" placeholder="Describe your vision — colors, size, special elements..."></textarea>
+            <div class="upload-area" id="uploadTrigger">
+              <i class="fas fa-cloud-upload-alt"></i> Click to upload reference
+              <input type="file" id="photoRef" accept="image/*" style="display: none;">
+            </div>
+            <button type="submit" class="btn-submit">Submit Inquiry</button>
+            <div id="formMsg" style="margin-top: 15px; text-align: center; font-size: 0.8rem;"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    <p>✨ Sparkle Resin Art by Amatullah — Porbandar, Gujarat ✨</p>
-    <p>📸 Instagram: @sparkle_resin_art_by_amatullah</p>
-  </footer>
+  <!-- Testimonials -->
+  <section id="reviews">
+    <div class="section-title">Client Stories</div>
+    <div class="section-subtitle">WHAT THEY SAY</div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card"><div class="quote">"The engagement tray exceeded all expectations. Gold leaf work is stunning."</div><div class="customer-name">— PRIYA & ROHAN, MUMBAI</div></div>
+      <div class="testimonial-card"><div class="quote">"Preserved my wedding bouquet — I cried when I saw it. A masterpiece."</div><div class="customer-name">— DEVANSHI S., AHMEDABAD</div></div>
+      <div class="testimonial-card"><div class="quote">"The most beautiful resin art I've ever seen. Truly luxury."</div><div class="customer-name">— MEET J., PORBANDAR</div></div>
+      <div class="testimonial-card"><div class="quote">"Fast shipping, exquisite packaging, perfect craftsmanship."</div><div class="customer-name">— KINJAL M., RAJKOT</div></div>
+    </div>
+  </section>
+
+  <!-- Instagram Feed -->
+  <div class="section-title">Follow Our Atelier</div>
+  <div class="section-subtitle">@SPARKLE_RESIN_ART_BY_AMATULLAH</div>
+  <div class="insta-grid">
+    <div class="insta-item"><i class="fab fa-instagram"></i></div>
+    <div class="insta-item"><i class="fab fa-instagram"></i></div>
+    <div class="insta-item"><i class="fab fa-instagram"></i></div>
+    <div class="insta-item"><i class="fab fa-instagram"></i></div>
+    <div class="insta-item"><i class="fab fa-instagram"></i></div>
+    <div class="insta-item"><i class="fab fa-instagram"></i></div>
+  </div>
 </div>
+
+<!-- Footer -->
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>SPARKLE RESIN ART</h4><p>Handcrafted luxury resin keepsakes from Porbandar, Gujarat.</p></div>
+      <div class="footer-col"><h4>CONTACT</h4><p>📸 @sparkle_resin_art_by_amatullah<br>📍 Porbandar, India<br>✉️ DM for inquiries</p></div>
+      <div class="footer-col"><h4>POLICIES</h4><p>Complimentary Shipping<br>Secure Payment<br>Made to Order</p></div>
+      <div class="footer-col"><h4>FOLLOW</h4><p><i class="fab fa-instagram"></i> Instagram<br><i class="fab fa-pinterest"></i> Pinterest<br><i class="fab fa-youtube"></i> YouTube</p></div>
+    </div>
+    <div class="copyright">© 2025 SPARKLE RESIN ART BY AMATULLAH — ALL RIGHTS RESERVED</div>
+  </div>
+</footer>
+
+<script>
+  // File upload trigger
+  document.getElementById('uploadTrigger')?.addEventListener('click', () => {
+    document.getElementById('photoRef').click();
+  });
+
+  // Form submission handler
+  document.getElementById('luxuryOrderForm')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const msgDiv = document.getElementById('formMsg');
+    msgDiv.innerHTML = '<div style="color: #C6A43F;">⏳ Sending your request...</div>';
+    
+    // For now, this simulates success
+    setTimeout(() => {
+      msgDiv.innerHTML = '<div style="color: #C6A43F;">✨ Your inquiry has been received. Amatullah will respond within 24 hours. ✨</div>';
+      document.getElementById('luxuryOrderForm').reset();
+    }, 1000);
+  });
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if(target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
 </body>
 </html>
