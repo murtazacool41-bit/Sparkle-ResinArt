@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sparkle Resin Art | Custom Order</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0A0A0A; font-family: 'Inter', sans-serif; color: #ece7e1; }
+    :root { --gold: #D4AF37; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 28px; }
+    .brand-header { text-align: center; padding: 40px 0 20px; border-bottom: 2px solid rgba(212,175,55,0.3); }
+    .brand-name { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 700; color: var(--gold); text-transform: uppercase; }
+    nav { display: flex; justify-content: center; gap: 3rem; padding: 24px 0; flex-wrap: wrap; border-bottom: 1px solid rgba(212,175,55,0.2); }
+    nav a { text-decoration: none; color: #ece7e1; font-weight: 500; transition: 0.3s; }
+    nav a:hover { color: var(--gold); }
+    .form-container { background: #11100e; border-radius: 48px; padding: 50px; margin: 50px 0; border: 1px solid rgba(212,175,55,0.25); }
+    input, textarea, select { width: 100%; background: #1e1c19; border: 1px solid #3a352e; padding: 14px 18px; border-radius: 30px; color: #fff; margin-bottom: 20px; }
+    .btn-submit { background: var(--gold); color: #0A0A0A; padding: 14px; border-radius: 40px; font-weight: bold; cursor: pointer; width: 100%; border: none; }
+    .upload-area { border: 1px dashed var(--gold); background: #1e1c19; border-radius: 28px; padding: 25px; text-align: center; margin-bottom: 20px; cursor: pointer; }
+    footer { text-align: center; padding: 40px 0; border-top: 1px solid rgba(212,175,55,0.2); margin-top: 50px; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="brand-header">
+    <div class="brand-name">SPARKLE RESIN ART BY AMATULLAH</div>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="order.html">Custom Order</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="form-container">
+    <h2 style="text-align: center; margin-bottom: 10px;">✨ Commission Your Piece ✨</h2>
+    <p style="text-align: center; margin-bottom: 30px;">Tell us your vision — we'll reply within 24 hours</p>
+    <form id="orderForm">
+      <input type="text" id="name" placeholder="Full Name *" required>
+      <input type="email" id="email" placeholder="Email / Instagram *" required>
+      <select id="category">
+        <option>Wedding Flower Preservation</option>
+        <option>Custom Photo Frame</option>
+        <option>Engagement Tray</option>
+        <option>Memorial Keepsake</option>
+        <option>Other Resin Art</option>
+      </select>
+      <textarea rows="4" id="details" placeholder="Describe your idea (colors, size, special elements...)"></textarea>
+      <div class="upload-area" id="uploadTrigger">
+        <i class="fas fa-cloud-upload-alt" style="font-size: 2rem;"></i>
+        <p>Click to upload reference photo</p>
+        <input type="file" id="photoRef" accept="image/*" style="display: none;">
+      </div>
+      <button type="submit" class="btn-submit">Send Custom Request 💌</button>
+      <div id="formMsg" style="margin-top: 20px; text-align: center;"></div>
+    </form>
+  </div>
+
+  <footer>
+    <p>📸 DM on Instagram: @sparkle_resin_art_by_amatullah</p>
+  </footer>
+</div>
+<script>
+  document.getElementById('uploadTrigger')?.addEventListener('click', () => document.getElementById('photoRef').click());
+  document.getElementById('orderForm')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    document.getElementById('formMsg').innerHTML = '<div style="color:#D4AF37;">✨ Request received! Amatullah will reach out within 24h. ✨</div>';
+    e.target.reset();
+  });
+</script>
+</body>
+</html>
