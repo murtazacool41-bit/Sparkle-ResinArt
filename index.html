@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sparkle Resin | Home</title>
+  <title>Sparkle Resin | Gallery</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -17,27 +17,34 @@
     .nav-links a { text-decoration: none; color: #ECE7E1; font-weight: 400; font-size: 0.9rem; transition: 0.2s; }
     .nav-links a:hover { color: #D4AF37; }
     
-    .hero { display: flex; align-items: center; justify-content: space-between; min-height: 80vh; gap: 60px; padding: 40px 0; }
-    .hero-content { flex: 1; }
-    .hero-label { font-size: 0.8rem; letter-spacing: 4px; color: #D4AF37; margin-bottom: 20px; text-transform: uppercase; }
-    .hero-content h1 { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 500; line-height: 1.1; margin-bottom: 25px; color: #FFFFFF; }
-    .hero-content p { font-size: 1rem; line-height: 1.6; color: #B0B0B0; margin-bottom: 35px; max-width: 85%; }
-    .btn-group { display: flex; gap: 20px; }
-    .btn-primary { background: #D4AF37; border: none; color: #0A0A0A; padding: 14px 35px; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: 0.3s; font-weight: 600; }
-    .btn-primary:hover { background: #E8D174; }
-    .btn-secondary { background: transparent; border: 1px solid #D4AF37; color: #D4AF37; padding: 14px 35px; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
-    .btn-secondary:hover { background: #D4AF37; color: #0A0A0A; }
-    .hero-image { flex: 1; background: #1A1A1A; border-radius: 8px; overflow: hidden; aspect-ratio: 1 / 1; }
-    .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+    .keywords { display: flex; justify-content: center; gap: 60px; margin: 60px 0 40px; flex-wrap: wrap; }
+    .keyword { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; letter-spacing: 4px; color: #888; text-transform: uppercase; }
+    
+    .section-title { text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 500; margin: 40px 0 15px; color: #FFFFFF; }
+    .section-subtitle { text-align: center; color: #B0B0B0; font-size: 0.9rem; margin-bottom: 50px; }
+    
+    .filter-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 40px 0 50px; }
+    .filter-btn { background: transparent; border: none; padding: 8px 20px; font-size: 0.8rem; letter-spacing: 1px; cursor: pointer; transition: 0.3s; color: #B0B0B0; }
+    .filter-btn.active, .filter-btn:hover { color: #D4AF37; border-bottom: 2px solid #D4AF37; }
+    
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 40px; margin: 50px 0; }
+    .product-card { background: #141414; border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 12px; overflow: hidden; transition: 0.3s; }
+    .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); border-color: #D4AF37; }
+    .product-img { width: 100%; aspect-ratio: 1 / 1; background: #1A1A1A; background-size: cover; background-position: center; }
+    .product-info { padding: 20px; text-align: center; }
+    .product-info h3 { font-size: 1.1rem; margin-bottom: 8px; color: #FFFFFF; }
+    .product-info p { color: #B0B0B0; font-size: 0.8rem; margin-bottom: 10px; }
+    .price { color: #D4AF37; font-weight: 600; font-size: 1rem; margin-bottom: 15px; }
+    .product-btn { background: transparent; border: 1px solid #D4AF37; color: #D4AF37; padding: 8px 0; width: 100%; border-radius: 30px; cursor: pointer; font-size: 0.7rem; letter-spacing: 1px; transition: 0.3s; }
+    .product-btn:hover { background: #D4AF37; color: #0A0A0A; }
     
     footer { border-top: 1px solid rgba(212, 175, 55, 0.2); text-align: center; padding: 40px 0; margin-top: 60px; color: #666; font-size: 0.8rem; }
     
     @media (max-width: 900px) {
       .container { padding: 0 25px; }
-      .hero { flex-direction: column; text-align: center; }
-      .hero-content p { max-width: 100%; }
-      .btn-group { justify-content: center; }
-      .hero-content h1 { font-size: 2.8rem; }
+      .keywords { gap: 25px; }
+      .keyword { font-size: 0.8rem; letter-spacing: 2px; }
+      .filter-buttons { gap: 10px; }
       .nav-links { gap: 1.2rem; margin-top: 15px; }
     }
   </style>
@@ -56,18 +63,79 @@
     </ul>
   </nav>
 
-  <div class="hero">
-    <div class="hero-content">
-      <div class="hero-label">SPARKLE RESIN</div>
-      <h1>HANDCRAFTED<br>RESIN ART<br>CREATIONS</h1>
-      <p>Unique handmade resin trays, wall art, name plates, and customized creations crafted with passion to turn your memories into timeless art.</p>
-      <div class="btn-group">
-        <button class="btn-primary" onclick="location.href='gallery.html'">View Collection →</button>
-        <button class="btn-secondary" onclick="location.href='order.html'">Custom Order</button>
+  <div class="keywords">
+    <div class="keyword">HANDMADE</div>
+    <div class="keyword">ARTISANAL</div>
+    <div class="keyword">PREMIUM</div>
+    <div class="keyword">BESPOKE</div>
+  </div>
+
+  <div class="section-title">Our Signature Collections</div>
+  <div class="section-subtitle">Explore our wide range of resin creations, each piece telling a unique story of craftsmanship</div>
+
+  <div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="trays">Trays</button>
+    <button class="filter-btn" data-filter="wallart">Wall Art</button>
+    <button class="filter-btn" data-filter="clocks">Clocks</button>
+    <button class="filter-btn" data-filter="nameplates">Name Plates</button>
+    <button class="filter-btn" data-filter="gifts">Gifts</button>
+  </div>
+
+  <div class="product-grid" id="productGrid">
+    <div class="product-card" data-category="trays">
+      <div class="product-img" style="background-image: url('https://res.cloudinary.com/dn9g3n78m/image/upload/v1781188749/IMG_9544_ox35nk.png');"></div>
+      <div class="product-info">
+        <h3>Engagement Tray</h3>
+        <p>With Every Love</p>
+        <div class="price">₹1,199</div>
+        <button class="product-btn" onclick="location.href='order.html'">Customize →</button>
       </div>
     </div>
-    <div class="hero-image">
-      <img src="https://res.cloudinary.com/dn9g3n78m/image/upload/v1781188748/IMG_9543_c5stea.png" alt="Sparkle Resin Art">
+    <div class="product-card" data-category="wallart">
+      <div class="product-img" style="background-image: url('https://res.cloudinary.com/dn9g3n78m/image/upload/v1781188748/IMG_9543_c5stea.png');"></div>
+      <div class="product-info">
+        <h3>Resin Wall Art</h3>
+        <p>Abstract design with gold flakes</p>
+        <div class="price">₹2,499+</div>
+        <button class="product-btn" onclick="location.href='order.html'">Customize →</button>
+      </div>
+    </div>
+    <div class="product-card" data-category="clocks">
+      <div class="product-img" style="background-image: url('https://placehold.co/400x400/1A1A1A/D4AF37?text=⏰+Custom+Clock'); background-size: cover;"></div>
+      <div class="product-info">
+        <h3>Custom Clock</h3>
+        <p>Personalized resin timepiece</p>
+        <div class="price">₹850 - ₹8,850</div>
+        <button class="product-btn" onclick="location.href='order.html'">Customize →</button>
+      </div>
+    </div>
+    <div class="product-card" data-category="nameplates">
+      <div class="product-img" style="background-image: url('https://placehold.co/400x400/1A1A1A/D4AF37?text=🏷️+Name+Plate'); background-size: cover;"></div>
+      <div class="product-info">
+        <h3>Resin Name Plate</h3>
+        <p>With dried flowers & gold lettering</p>
+        <div class="price">₹650+</div>
+        <button class="product-btn" onclick="location.href='order.html'">Customize →</button>
+      </div>
+    </div>
+    <div class="product-card" data-category="gifts">
+      <div class="product-img" style="background-image: url('https://res.cloudinary.com/dn9g3n78m/image/upload/v1781188745/IMG_9542_kkoj5j.png');"></div>
+      <div class="product-info">
+        <h3>Custom Keychain</h3>
+        <p>Memory into a keychain</p>
+        <div class="price">₹199</div>
+        <button class="product-btn" onclick="location.href='order.html'">Customize →</button>
+      </div>
+    </div>
+    <div class="product-card" data-category="trays">
+      <div class="product-img" style="background-image: url('https://placehold.co/400x400/1A1A1A/D4AF37?text=🍽️+Puja+Thali'); background-size: cover;"></div>
+      <div class="product-info">
+        <h3>Puja Thali</h3>
+        <p>All sizes available</p>
+        <div class="price">₹450 - ₹2,000</div>
+        <button class="product-btn" onclick="location.href='order.html'">Customize →</button>
+      </div>
     </div>
   </div>
 
@@ -75,5 +143,21 @@
     <p>© 2025 Sparkle Resin — Handcrafted with Love in Porbandar</p>
   </footer>
 </div>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const products = document.querySelectorAll('.product-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.getAttribute('data-filter');
+      products.forEach(product => {
+        product.style.display = (filter === 'all' || product.getAttribute('data-category') === filter) ? 'block' : 'none';
+      });
+    });
+  });
+</script>
 </body>
 </html>
