@@ -2,420 +2,112 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Sparkle Resin Art | Amatullah</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
-            background: #fefaf5;
-            color: #2a2418;
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* header */
-        .top-header {
-            padding: 28px 0 16px;
-            border-bottom: 2px solid #f0e3d8;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .logo h1 {
-            font-size: 1.9rem;
-            font-weight: 500;
-            letter-spacing: -0.3px;
-            color: #3e2a1f;
-        }
-
-        .logo p {
-            font-size: 0.85rem;
-            color: #b37b48;
-            margin-top: 6px;
-        }
-
-        .contact-links {
-            text-align: right;
-        }
-
-        .contact-links a {
-            display: inline-block;
-            text-decoration: none;
-            background: #fff0e5;
-            padding: 8px 18px;
-            border-radius: 60px;
-            font-weight: 500;
-            color: #b45f2b;
-            margin-left: 12px;
-            transition: 0.2s;
-        }
-
-        .contact-links a:hover {
-            background: #e7d9ce;
-        }
-
-        /* hero section with love price */
-        .hero-love {
-            background: linear-gradient(135deg, #fff3ea 0%, #fde8db 100%);
-            border-radius: 48px;
-            margin: 40px 0 48px;
-            padding: 48px 32px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .love-text h2 {
-            font-size: 2.5rem;
-            font-weight: 500;
-            line-height: 1.2;
-        }
-
-        .love-price {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #b95f2c;
-            margin: 16px 0 8px;
-        }
-
-        .love-note {
-            background: white;
-            padding: 12px 24px;
-            border-radius: 60px;
-            display: inline-block;
-            font-weight: 500;
-        }
-
-        /* unique product gallery with price grid (no brochure dump) */
-        .section-title {
-            font-size: 2rem;
-            font-weight: 500;
-            margin: 56px 0 24px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60%;
-            height: 3px;
-            background: #e3c9b5;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 32px;
-            margin: 32px 0 48px;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 28px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
-            transition: all 0.25s ease;
-            border: 1px solid #f2e4da;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
-        }
-
-        .product-img {
-            background: #f2e8e0;
-            height: 220px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            background-image: radial-gradient(circle at 20% 35%, #e7d7cb 1.2px, transparent 1px);
-            background-size: 20px 20px;
-        }
-
-        .product-info {
-            padding: 20px 18px 24px;
-        }
-
-        .product-name {
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-        }
-
-        .price-range {
-            color: #b95f2c;
-            font-weight: 600;
-            font-size: 1rem;
-            margin: 8px 0;
-        }
-
-        .small-note {
-            font-size: 0.75rem;
-            color: #8f7a66;
-            margin-top: 6px;
-        }
-
-        .badge-custom {
-            display: inline-block;
-            background: #f9ede4;
-            font-size: 0.7rem;
-            padding: 4px 12px;
-            border-radius: 30px;
-            margin-top: 10px;
-            color: #b45f2b;
-        }
-
-        /* special showcases : keychain memory, price 349 */
-        .showcase-duo {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 32px;
-            margin: 48px 0;
-        }
-
-        .showcase-item {
-            flex: 1;
-            background: #fff7f0;
-            border-radius: 36px;
-            padding: 32px;
-            text-align: center;
-            border: 1px solid #f0e0d4;
-        }
-
-        .showcase-item .emoji-big {
-            font-size: 3.5rem;
-            margin-bottom: 12px;
-        }
-
-        .showcase-price {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #aa582c;
-            margin: 12px 0;
-        }
-
-        .instagram-handle {
-            font-family: monospace;
-            background: #2a2418;
-            color: white;
-            padding: 6px 14px;
-            border-radius: 50px;
-            display: inline-block;
-            font-size: 0.8rem;
-        }
-
-        /* CTA section + contact info */
-        .contact-section {
-            background: #2e241b;
-            color: white;
-            border-radius: 48px;
-            padding: 56px 32px;
-            margin: 64px 0 40px;
-            text-align: center;
-        }
-
-        .contact-section h3 {
-            font-size: 1.9rem;
-            font-weight: 500;
-            margin-bottom: 12px;
-        }
-
-        .contact-details {
-            margin: 28px 0;
-            font-size: 1.2rem;
-        }
-
-        .contact-details a {
-            color: #ffd7bc;
-            text-decoration: none;
-            font-weight: 500;
-            margin: 0 8px;
-        }
-
-        .customization-note {
-            background: #ffffff18;
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 60px;
-            font-size: 0.9rem;
-            margin-top: 16px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 32px 0 48px;
-            font-size: 0.8rem;
-            color: #aa937c;
-            border-top: 1px solid #e9dacf;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 700px) {
-            .top-header {
-                flex-direction: column;
-                text-align: center;
-            }
-            .contact-links {
-                text-align: center;
-            }
-            .love-text h2 {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparkle Resin | Handcrafted Art</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-    <div class="top-header">
-        <div class="logo">
-            <h1>✨ SPARKLE RESIN ART</h1>
-            <p>by Amatullah — Handcrafted resin memories</p>
-        </div>
-        <div class="contact-links">
-            <a href="tel:+918488953611">📞 Call +91 84889 53611</a>
-            <a href="mailto:khetiamtullah188@gmail.com">✉️ Email</a>
-        </div>
-    </div>
 
-    <!-- special love section (IMG_9544) -->
-    <div class="hero-love">
-        <div class="love-text">
-            <h2>With Every ❤️ Love</h2>
-            <div class="love-price">₹1199 only</div>
-            <div class="love-note">✨ Varmala Preservation / Engagement Tray ✨</div>
-        </div>
-        <div class="love-text">
-            <span class="instagram-handle">@sparkle_resin_art_by_amatullah</span>
-        </div>
-    </div>
-
-    <!-- dynamic product range from price list, presented uniquely -->
-    <div class="section-title">✨ Resin Treasures ✨</div>
-    <div class="product-grid" id="productGrid">
-        <!-- products generated from the brochure but displayed artistically -->
-    </div>
-
-    <!-- custom memory keychain & other highlights -->
-    <div class="showcase-duo">
-        <div class="showcase-item">
-            <div class="emoji-big">🔑💖</div>
-            <h3>Memory into a Keychain</h3>
-            <div class="showcase-price">Just ₹199/-</div>
-            <span class="instagram-handle">@sparkle_resin_art_by_amatullah</span>
-        </div>
-        <div class="showcase-item">
-            <div class="emoji-big">📖🖊️</div>
-            <h3>Pen & Diary Set</h3>
-            <div class="showcase-price">₹349 only</div>
-            <div class="small-note">Elegant resin finish</div>
-        </div>
-    </div>
-
-    <!-- all categories + price representation (clean & interactive) -->
-    <div class="section-title">🌸 Complete Collection 🌸</div>
-    <div class="product-grid" id="fullCollectionGrid"></div>
-
-    <!-- Customization + contact area -->
-    <div class="contact-section">
-        <h3>Your vision, handcrafted in resin.</h3>
-        <p>Customization available — every piece tells your story.</p>
-        <div class="contact-details">
-            📞 <a href="tel:+918488953611">+91 84889 53611</a> &nbsp;|&nbsp;
-            ✉️ <a href="mailto:khetiamtullah188@gmail.com">khetiamtullah188@gmail.com</a>
-        </div>
-        <div class="customization-note">✨ Puja Thali | Resin Utensils | Nikahanama Frame | Custom Sizes ✨</div>
-    </div>
-
-    <footer>
-        <p>💎 Sparkle Resin Art by Amatullah — turning memories into timeless resin art</p>
-        <p>Follow us on Instagram: @sparkle_resin_art_by_amatullah</p>
-    </footer>
+<!-- Top bar -->
+<div class="top-bar">
+    <div class="container">✨ Free Customization on all orders above ₹999 | ✨ Handcrafted with love</div>
 </div>
 
-<script>
-    // Product data from price list (beautifully represented)
-    const productList = [
-        { name: "Keychain", price: "₹99 – ₹149" },
-        { name: "Phone Case", price: "₹300 – ₹400" },
-        { name: "Bookmark", price: "₹120 – ₹150" },
-        { name: "Pen & Diary", price: "₹349" },
-        { name: "Wall Hanging", price: "₹149 – ₹299" },
-        { name: "Car Hanging", price: "₹149 – ₹249" },
-        { name: "Fridge Magnets", price: "₹149" },
-        { name: "Puja Thali", price: "₹450 – ₹2000" },
-        { name: "Studs & Box", price: "₹650 (all designs)" },
-        { name: "Car Frame", price: "₹2250 – ₹8850" },
-        { name: "Clock", price: "₹850 – ₹8850" },
-        { name: "Photo Frame", price: "₹850 – ₹2250" },
-        { name: "Nikahanama Frame (Combo)", price: "₹1500 – ₹6500" },
-        { name: "Heart Frame", price: "₹3500 – ₹16500" },
-        { name: "Wall Frame (big size)", price: "₹2500 – ₹16500" },
-        { name: "Varmala Preservation", price: "₹5500 – ₹12500" },
-        { name: "Engagement Tray", price: "₹2250 – ₹3250" },
-        { name: "Rehal (Combo)", price: "₹1850 – ₹6550" },
-        { name: "Resin Utensils (Combo)", price: "₹12500" }
-    ];
+<header>
+    <div class="container header-flex">
+        <div class="logo">
+            <h1>SPARKLE RESIN</h1>
+            <p>by Amatullah</p>
+        </div>
+        <div class="header-actions">
+            <a href="gallery.html">Gallery</a>
+            <a href="custom.html">Custom Order</a>
+            <a href="tel:+918488953611" class="call-btn">📞 Call Now</a>
+        </div>
+    </div>
+</header>
 
-    const gridContainer = document.getElementById("productGrid");
-    const fullGrid = document.getElementById("fullCollectionGrid");
-
-    function renderProducts(container, items, limit = 8) {
-        if(!container) return;
-        const toRender = limit ? items.slice(0, limit) : items;
-        container.innerHTML = toRender.map(item => `
-            <div class="product-card">
-                <div class="product-img">✨</div>
-                <div class="product-info">
-                    <div class="product-name">${item.name}</div>
-                    <div class="price-range">${item.price}</div>
-                    <div class="badge-custom">Handmade with resin</div>
+<main>
+    <!-- Hero banner -->
+    <section class="hero-banner">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="tag">Handcrafted Resin Art</span>
+                <h1>Turning Memories <br>into Timeless Art</h1>
+                <p>Unique resin trays, wall art, name plates, and personalized creations.</p>
+                <div class="hero-buttons">
+                    <a href="gallery.html" class="btn-primary">Shop Now →</a>
+                    <a href="custom.html" class="btn-outline">Custom Order</a>
                 </div>
             </div>
-        `).join('');
-    }
+            <div class="hero-image"></div>
+        </div>
+    </section>
 
-    // first grid shows featured ones
-    renderProducts(gridContainer, productList, 8);
-    // second grid shows all remaining products
-    renderProducts(fullGrid, productList, productList.length);
+    <!-- Why Sparkle Resin (like Itsy Bitsy's features) -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Sparkle Resin</h2>
+            <div class="features-grid">
+                <div class="feature-card"><h3>✨ Handcrafted</h3><p>Every piece made with love and precision</p></div>
+                <div class="feature-card"><h3>🎨 Customization</h3><p>Bring your own memories to life</p></div>
+                <div class="feature-card"><h3>🇮🇳 Made in India</h3><p>Proudly crafted by local artisans</p></div>
+                <div class="feature-card"><h3>📦 Secure Shipping</h3><p>Packed with care, delivered safely</p></div>
+            </div>
+        </div>
+    </section>
 
-    // also add a small interactive note for "Memory Keychain" and "pen & diary" already shown in showcase
-    // if we want to highlight specific products, already done in showcase section.
-    // Add direct click to contact for any card
-    document.querySelectorAll('.product-card').forEach(card => {
-        card.addEventListener('click', () => {
-            alert("✨ Love this piece? Call +91 84889 53611 or email to customize yours!");
-        });
-    });
+    <!-- Featured products grid -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">✨ Our Best Sellers ✨</h2>
+            <div class="products-grid" id="featuredGrid"></div>
+            <div class="center-btn"><a href="gallery.html" class="btn-outline">View All Products →</a></div>
+        </div>
+    </section>
 
-    // make contact details more alive
-    const contactSection = document.querySelector('.contact-section');
-    if(contactSection) {
-        contactSection.style.cursor = "pointer";
-        contactSection.addEventListener('click', () => {
-            window.location.href = "tel:+918488953611";
-        });
-    }
-</script>
+    <!-- Special highlights: Varmala + Keychain -->
+    <section class="highlights">
+        <div class="container highlights-flex">
+            <div class="highlight-card"><h3>💍 Varmala Preservation</h3><p>Preserve your wedding memories forever in crystal clear resin</p><div class="price">From ₹5500</div><a href="custom.html" class="btn-small">Inquire →</a></div>
+            <div class="highlight-card"><h3>🔑 Memory Keychain</h3><p>Turn any small memory into a daily keepsake</p><div class="price">Just ₹199</div><a href="custom.html" class="btn-small">Order Now →</a></div>
+        </div>
+    </section>
+
+    <!-- Customer reviews (like Itsy Bitsy) -->
+    <section class="reviews">
+        <div class="container">
+            <h2 class="section-title">❤️ What Our Customers Say</h2>
+            <div class="reviews-grid">
+                <div class="review-card">★★★★★<p>"The resin tray I ordered is stunning — exactly like the photo. Shipping was fast!"</p><span>- Priya S.</span></div>
+                <div class="review-card">★★★★★<p>"Amatullah customized a name plate for our home. Beautiful work, highly recommend."</p><span>- Rajesh K.</span></div>
+                <div class="review-card">★★★★★<p>"Got a varmala preservation piece as a gift. The couple loved it. Thank you!"</p><span>- Sneha M.</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog / inspiration teaser -->
+    <section class="blog">
+        <div class="container">
+            <h2 class="section-title">📖 Resin Inspiration</h2>
+            <div class="blog-grid">
+                <div class="blog-card"><div class="blog-img"></div><h4>How to care for resin art</h4><a href="#">Read more →</a></div>
+                <div class="blog-card"><div class="blog-img"></div><h4>5 unique wedding preservation ideas</h4><a href="#">Read more →</a></div>
+                <div class="blog-card"><div class="blog-img"></div><h4>Customizing your own resin tray</h4><a href="#">Read more →</a></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container footer-grid">
+        <div><h3>Sparkle Resin</h3><p>Turning memories into art through handcrafted resin</p></div>
+        <div><h3>Contact</h3><p>📞 <a href="tel:+918488953611">+91 84889 53611</a><br>✉️ <a href="mailto:khetiamtullah188@gmail.com">khetiamtullah188@gmail.com</a><br>IG: @sparkle_resin_art_by_amatullah</p></div>
+        <div><h3>Quick links</h3><p><a href="gallery.html">Gallery</a><br><a href="custom.html">Custom Order</a></p></div>
+    </div>
+    <div class="copyright">© Sparkle Resin Art by Amatullah — Handcrafted with love in India</div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
