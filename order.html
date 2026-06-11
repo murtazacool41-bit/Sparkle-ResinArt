@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sparkle Resin | Custom Order</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #FFFFFF; font-family: 'Inter', sans-serif; color: #1A1A1A; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
+    
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 35px 0; flex-wrap: wrap; }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; letter-spacing: 2px; color: #1A1A1A; text-decoration: none; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: #1A1A1A; font-weight: 400; font-size: 0.9rem; transition: 0.2s; }
+    .nav-links a:hover { color: #D4AF37; }
+    
+    .form-section { max-width: 800px; margin: 60px auto; }
+    .form-section h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 500; text-align: center; margin-bottom: 15px; }
+    .form-section p { text-align: center; color: #666; margin-bottom: 40px; }
+    
+    input, textarea, select { width: 100%; background: #F9F9F9; border: 1px solid #EEE; padding: 14px 18px; border-radius: 8px; margin-bottom: 20px; font-family: 'Inter', sans-serif; }
+    .upload-area { border: 1px dashed #D4AF37; background: #F9F9F9; border-radius: 8px; padding: 25px; text-align: center; cursor: pointer; margin-bottom: 20px; }
+    .btn-submit { background: #1A1A1A; border: none; color: white; padding: 14px; width: 100%; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: 0.3s; border-radius: 8px; }
+    .btn-submit:hover { background: #D4AF37; color: #1A1A1A; }
+    
+    footer { border-top: 1px solid #EEE; text-align: center; padding: 40px 0; margin-top: 60px; color: #888; font-size: 0.8rem; }
+    
+    @media (max-width: 900px) { .container { padding: 0 25px; } .nav-links { gap: 1.2rem; margin-top: 15px; } }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <nav>
+    <a href="index.html" class="logo">SPARKLE RESIN</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="office.html">Office</a></li>
+      <li><a href="order.html">Custom Order</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="form-section">
+    <h1>Custom Order</h1>
+    <p>Tell me your vision — I'll bring it to life with resin</p>
+    
+    <form id="customOrderForm">
+      <input type="text" id="name" placeholder="Full Name *" required>
+      <input type="email" id="email" placeholder="Email / Instagram *" required>
+      <select id="category">
+        <option>Select Product Type</option>
+        <option>Tray</option>
+        <option>Wall Art</option>
+        <option>Clock</option>
+        <option>Name Plate</option>
+        <option>Keychain</option>
+        <option>Phone Case</option>
+        <option>Photo Frame</option>
+        <option>Other</option>
+      </select>
+      <textarea rows="4" id="details" placeholder="Describe your idea — colors, size, budget, special elements..."></textarea>
+      <div class="upload-area" id="uploadTrigger">
+        <i class="fas fa-cloud-upload-alt"></i> Click to upload reference photo
+        <input type="file" id="photoRef" accept="image/*" style="display: none;">
+      </div>
+      <button type="submit" class="btn-submit">Send Request →</button>
+      <div id="formMessage" style="margin-top: 15px; text-align: center;"></div>
+    </form>
+  </div>
+
+  <footer>
+    <p>© 2025 Sparkle Resin — Handcrafted with Love in Porbandar</p>
+  </footer>
+</div>
+
+<script>
+  document.getElementById('uploadTrigger')?.addEventListener('click', () => document.getElementById('photoRef').click());
+  
+  document.getElementById('customOrderForm')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const msgDiv = document.getElementById('formMessage');
+    msgDiv.innerHTML = '<div style="color:#D4AF37;">⏳ Sending...</div>';
+    setTimeout(() => {
+      msgDiv.innerHTML = '<div style="color:#D4AF37;">✨ Request sent! Amatullah will reach out within 24h. ✨</div>';
+      document.getElementById('customOrderForm').reset();
+    }, 1000);
+  });
+</script>
+</body>
+</html>
