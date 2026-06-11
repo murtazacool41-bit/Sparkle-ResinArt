@@ -1,22 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sparkle Resin | Gallery</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sparkle Resin | Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #FFFFFF; font-family: 'Inter', sans-serif; color: #1A1A1A; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 0 60px; }
+    
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 35px 0; flex-wrap: wrap; }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; letter-spacing: 2px; color: #1A1A1A; text-decoration: none; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: #1A1A1A; font-weight: 400; font-size: 0.9rem; transition: 0.2s; }
+    .nav-links a:hover { color: #D4AF37; }
+    
+    .keywords { display: flex; justify-content: center; gap: 60px; margin: 60px 0 40px; flex-wrap: wrap; }
+    .keyword { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; letter-spacing: 4px; color: #999; text-transform: uppercase; }
+    
+    .section-title { text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 500; margin: 40px 0 15px; }
+    .section-subtitle { text-align: center; color: #666; font-size: 0.9rem; margin-bottom: 50px; }
+    
+    /* Filter Buttons */
+    .filter-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 40px 0 50px; }
+    .filter-btn { background: transparent; border: none; padding: 8px 20px; font-size: 0.8rem; letter-spacing: 1px; cursor: pointer; transition: 0.3s; color: #666; }
+    .filter-btn.active, .filter-btn:hover { color: #D4AF37; border-bottom: 2px solid #D4AF37; }
+    
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 40px; margin: 50px 0; }
+    .product-card { background: #FFFFFF; border: 1px solid #EEE; border-radius: 12px; overflow: hidden; transition: 0.3s; }
+    .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-color: #D4AF37; }
+    .product-img { width: 100%; aspect-ratio: 1 / 1; background: #F5F5F5; background-size: cover; background-position: center; }
+    .product-info { padding: 20px; text-align: center; }
+    .product-info h3 { font-size: 1.1rem; margin-bottom: 8px; }
+    .product-info p { color: #666; font-size: 0.8rem; margin-bottom: 10px; }
+    .price { color: #D4AF37; font-weight: 600; font-size: 1rem; margin-bottom: 15px; }
+    .product-btn { background: transparent; border: 1px solid #1A1A1A; color: #1A1A1A; padding: 8px 0; width: 100%; border-radius: 30px; cursor: pointer; font-size: 0.7rem; letter-spacing: 1px; transition: 0.3s; }
+    .product-btn:hover { background: #1A1A1A; color: white; }
+    
+    footer { border-top: 1px solid #EEE; text-align: center; padding: 40px 0; margin-top: 60px; color: #888; font-size: 0.8rem; }
+    
+    @media (max-width: 900px) {
+      .container { padding: 0 25px; }
+      .keywords { gap: 25px; }
+      .keyword { font-size: 0.8rem; letter-spacing: 2px; }
+      .filter-buttons { gap: 10px; }
+      .nav-links { gap: 1.2rem; margin-top: 15px; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="top-bar"><div class="container">✨ Free Customization on all orders above ₹999 ✨</div></div>
-<header><div class="container header-flex"><div class="logo"><h1>SPARKLE RESIN</h1><p>by Amatullah</p></div><div class="header-actions"><a href="index.html">Home</a><a href="gallery.html" class="active">Gallery</a><a href="custom.html">Custom Order</a><a href="tel:+918488953611" class="call-btn">📞 Call Now</a></div></div></header>
+<div class="container">
+  <nav>
+    <a href="index.html" class="logo">SPARKLE RESIN</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="office.html">Office</a></li>
+      <li><a href="order.html">Custom Order</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-<main class="container">
-    <h2 class="page-title">All Resin Creations</h2>
-    <div class="products-grid full-grid" id="fullGallery"></div>
-</main>
+  <!-- Keywords Section -->
+  <div class="keywords">
+    <div class="keyword">HANDMADE</div>
+    <div class="keyword">ARTISANAL</div>
+    <div class="keyword">PREMIUM</div>
+    <div class="keyword">BESPOKE</div>
+  </div>
 
-<footer><div class="container footer-grid"><div><h3>Sparkle Resin</h3><p>Turning memories into art through handcrafted resin</p></div><div><h3>Contact</h3><p>📞 <a href="tel:+918488953611">+91 84889 53611</a><br>✉️ <a href="mailto:khetiamtullah188@gmail.com">khetiamtullah188@gmail.com</a></p></div></div><div class="copyright">© Sparkle Resin Art</div></footer>
-<script src="script.js"></script>
+  <div class="section-title">Our Signature Collections</div>
+  <div class="section-subtitle">Explore our wide range of resin creations, each piece telling a unique story of craftsmanship</div>
+
+  <!-- Filter Buttons -->
+  <div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="trays">Trays</button>
+    <button class="filter-btn" data-filter="wallart">Wall Art</button>
+    <button class="filter-btn" data-filter="clocks">Clocks</button>
+    <button class="filter-btn" data-filter="nameplates">Name Plates</button>
+    <button class="filter-btn" data-filter="gifts">Gifts</button>
+  </div>
+
+  <div class="product-grid" id="productGrid">
+    <!-- Trays -->
+    <div class="product-card" data-category="trays">
+      <div class="product-img" style="background-image: url('https://res.cloudinary.com/dn9g3n78m/image/upload/v1781188749/IMG_9544_ox35nk.png');"></div>
+      <div class="product-info">
+        <h3>Engagement Tray</h3>
+        <p>With Every Love</p>
+        <div class="price">₹1,199</div>
+        <button class="product-btn" onclick="location.href='order.html'">Customize →</button>
+      </div>
+    </div>
+    
+    <!-- Wall Art -->
+    <div class="product-card" data-category="wallart">
+      <div class="product-img" style="background-image: url('https://res.cloudinary.com/dn9g3n78m/image/upload/v1781188748/IMG_9543_c5stea.png');"></div>
+      <div class="product-info">
+        <h3>Resin Wall Art</h3>
+        <p>Abstract design with gold flakes</p>
+        <div class="price">₹2,499+</div>
+        <button class="product-btn" onclick="location.href='order.html'">Customize →</button>
+      </div>
+    </div>
+    
+    <!-- Clocks -->
+    <div class="product-card" data-category="clocks">
+      <div class="product-img" style="background-image: url('https://placehold.co/400x400/F5F5F5/D4AF37?text=⏰+Custom+Clock'); background-size: cover;"></div>
+      <div class="product-info">
+        <h3>Custom Clock</h3>
+        <p>Personalized resin timepiece</p>
+        <div class="price">₹850 - ₹8,850</div>
+        <button class="product-btn" onclick="location.href='order.html'">Customize →</button>
+      </div>
+    </div>
+    
+    <!-- Name Plates -->
+    <div class="product-card" data-category="nameplates">
+      <div class="product-img" style="background-image: url('https://placehold.co/400x400/F5F5F5/D4AF37?text=🏷️+Name+Plate'); background-size: cover;"></div>
+      <div class="product-info">
+        <h3>Resin Name Plate</h3>
+        <p>With dried flowers & gold lettering</p>
+        <div class="price">₹650+</div>
+        <button class="product-btn" onclick="location.href='order.html'">Customize →</button>
+      </div>
+    </div>
+    
+    <!-- Gifts -->
+    <div class="product-card" data-category="gifts">
+      <div class="product-img" style="background-image: url('https://res.cloudinary.com/dn9g3n78m/image/upload/v1781188745/IMG_9542_kkoj5j.png');"></div>
+      <div class="product-info">
+        <h3>Custom Keychain</h3>
+        <p>Memory into a keychain</p>
+        <div class="price">₹199</div>
+        <button class="product-btn" onclick="location.href='order.html'">Customize →</button>
+      </div>
+    </div>
+    
+    <div class="product-card" data-category="trays">
+      <div class="product-img" style="background-image: url('https://placehold.co/400x400/F5F5F5/D4AF37?text=🍽️+Puja+Thali'); background-size: cover;"></div>
+      <div class="product-info">
+        <h3>Puja Thali</h3>
+        <p>All sizes available</p>
+        <div class="price">₹450 - ₹2,000</div>
+        <button class="product-btn" onclick="location.href='order.html'">Customize →</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Sparkle Resin — Handcrafted with Love in Porbandar</p>
+  </footer>
+</div>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const products = document.querySelectorAll('.product-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      const filter = btn.getAttribute('data-filter');
+      
+      products.forEach(product => {
+        if (filter === 'all' || product.getAttribute('data-category') === filter) {
+          product.style.display = 'block';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
