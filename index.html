@@ -3,43 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sparkle Resin | Office Accessories</title>
+  <title>Sparkle Resin | Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #0A0A0A; font-family: 'Inter', sans-serif; color: #ECE7E1; }
+    body { background: #0A0A0A; font-family: 'Inter', sans-serif; color: #FFFFFF; }
     .container { max-width: 1400px; margin: 0 auto; padding: 0 60px; }
     
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 35px 0; flex-wrap: wrap; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 35px 0; flex-wrap: wrap; }
     .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; letter-spacing: 2px; color: #D4AF37; text-decoration: none; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a { text-decoration: none; color: #ECE7E1; font-weight: 400; font-size: 0.9rem; transition: 0.2s; }
+    .nav-links a { text-decoration: none; color: #FFFFFF; font-weight: 400; font-size: 0.9rem; transition: 0.2s; }
     .nav-links a:hover { color: #D4AF37; }
     
-    .office-header { text-align: center; margin: 60px 0 30px; }
-    .office-header h1 { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 500; margin-bottom: 15px; color: #FFFFFF; }
-    .office-header p { color: #B0B0B0; font-size: 0.9rem; margin-bottom: 20px; }
-    .office-header button { background: #D4AF37; border: none; color: #0A0A0A; padding: 12px 30px; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: 0.3s; font-weight: 600; }
-    .office-header button:hover { background: #E8D174; }
+    .hero { display: flex; align-items: center; justify-content: space-between; min-height: 80vh; gap: 60px; padding: 40px 0; }
+    .hero-content { flex: 1; }
+    .hero-label { font-size: 0.8rem; letter-spacing: 4px; color: #D4AF37; margin-bottom: 20px; text-transform: uppercase; }
+    .hero-content h1 { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 500; line-height: 1.1; margin-bottom: 25px; color: #FFFFFF; }
+    .hero-content p { font-size: 1rem; line-height: 1.6; color: #CCCCCC; margin-bottom: 35px; max-width: 85%; }
+    .btn-group { display: flex; gap: 20px; }
+    .btn-primary { background: #D4AF37; border: none; color: #0A0A0A; padding: 14px 35px; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: 0.3s; font-weight: 600; }
+    .btn-primary:hover { background: #E8D174; }
+    .btn-secondary { background: transparent; border: 1px solid #D4AF37; color: #D4AF37; padding: 14px 35px; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
+    .btn-secondary:hover { background: #D4AF37; color: #0A0A0A; }
+    .hero-image { flex: 1; background: #1A1A1A; border-radius: 8px; overflow: hidden; aspect-ratio: 1 / 1; }
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; }
     
-    .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 40px; margin: 50px 0; }
-    .product-card { background: #141414; border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 12px; overflow: hidden; transition: 0.3s; }
-    .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); border-color: #D4AF37; }
-    .product-img { width: 100%; aspect-ratio: 1 / 1; background: #1A1A1A; background-size: cover; background-position: center; }
-    .product-info { padding: 20px; text-align: center; }
-    .product-info h3 { font-size: 1.1rem; margin-bottom: 8px; color: #FFFFFF; }
-    .product-info p { color: #B0B0B0; font-size: 0.8rem; margin-bottom: 10px; }
-    .price { color: #D4AF37; font-weight: 600; font-size: 1rem; margin-bottom: 15px; }
-    .product-btn { background: transparent; border: 1px solid #D4AF37; color: #D4AF37; padding: 8px 0; width: 100%; border-radius: 30px; cursor: pointer; font-size: 0.7rem; letter-spacing: 1px; transition: 0.3s; }
-    .product-btn:hover { background: #D4AF37; color: #0A0A0A; }
-    
-    footer { border-top: 1px solid rgba(212, 175, 55, 0.2); text-align: center; padding: 40px 0; margin-top: 60px; color: #666; font-size: 0.8rem; }
+    footer { border-top: 1px solid #222; text-align: center; padding: 40px 0; margin-top: 60px; color: #666; font-size: 0.8rem; }
     
     @media (max-width: 900px) {
       .container { padding: 0 25px; }
+      .hero { flex-direction: column; text-align: center; }
+      .hero-content p { max-width: 100%; }
+      .btn-group { justify-content: center; }
+      .hero-content h1 { font-size: 2.8rem; }
       .nav-links { gap: 1.2rem; margin-top: 15px; }
-      .office-header h1 { font-size: 2.2rem; }
     }
   </style>
 </head>
@@ -57,48 +56,18 @@
     </ul>
   </nav>
 
-  <div class="office-header">
-    <h1>Office Accessories</h1>
-    <p>Elevate your workspace with resin.</p>
-    <button onclick="location.href='#products'">DISCOVER COLLECTION</button>
-  </div>
-
-  <div class="product-grid" id="products">
-    <div class="product-card">
-      <div class="product-img" style="background-image: url('https://placehold.co/400x400/1A1A1A/D4AF37?text=🖊️+Pen+Stand'); background-size: cover;"></div>
-      <div class="product-info">
-        <h3>Resin Pen Stand</h3>
-        <p>With dried lavender</p>
-        <div class="price">₹349</div>
-        <button class="product-btn" onclick="location.href='order.html'">Customize →</button>
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-label">SPARKLE RESIN</div>
+      <h1>HANDCRAFTED<br>RESIN ART<br>CREATIONS</h1>
+      <p>Unique handmade resin trays, wall art, name plates, and customized creations crafted with passion to turn your memories into timeless art.</p>
+      <div class="btn-group">
+        <button class="btn-primary" onclick="location.href='gallery.html'">View Collection →</button>
+        <button class="btn-secondary" onclick="location.href='order.html'">Custom Order</button>
       </div>
     </div>
-    <div class="product-card">
-      <div class="product-img" style="background-image: url('https://placehold.co/400x400/1A1A1A/D4AF37?text=📋+Desk+Mat'); background-size: cover;"></div>
-      <div class="product-info">
-        <h3>Resin Desk Mat</h3>
-        <p>Gold leaf & marble effect</p>
-        <div class="price">₹1,299</div>
-        <button class="product-btn" onclick="location.href='order.html'">Customize →</button>
-      </div>
-    </div>
-    <div class="product-card">
-      <div class="product-img" style="background-image: url('https://placehold.co/400x400/1A1A1A/D4AF37?text=📎+Paper+Tray'); background-size: cover;"></div>
-      <div class="product-info">
-        <h3>Resin Paper Tray</h3>
-        <p>Minimalist design</p>
-        <div class="price">₹899</div>
-        <button class="product-btn" onclick="location.href='order.html'">Customize →</button>
-      </div>
-    </div>
-    <div class="product-card">
-      <div class="product-img" style="background-image: url('https://placehold.co/400x400/1A1A1A/D4AF37?text=🖼️+Name+Plate'); background-size: cover;"></div>
-      <div class="product-info">
-        <h3>Office Name Plate</h3>
-        <p>Custom engraved resin</p>
-        <div class="price">₹650+</div>
-        <button class="product-btn" onclick="location.href='order.html'">Customize →</button>
-      </div>
+    <div class="hero-image">
+      <img src="https://res.cloudinary.com/dn9g3n78m/image/upload/v1781188748/IMG_9543_c5stea.png" alt="Sparkle Resin Art">
     </div>
   </div>
 
