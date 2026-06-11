@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sparkle Resin | Home</title>
+  <title>Sparkle Resin Art by Amatullah | Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -12,7 +12,8 @@
     .container { max-width: 1400px; margin: 0 auto; padding: 0 60px; }
     
     nav { display: flex; justify-content: space-between; align-items: center; padding: 35px 0; flex-wrap: wrap; }
-    .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; letter-spacing: 2px; color: #D4AF37; text-decoration: none; }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; letter-spacing: 2px; color: #D4AF37; text-decoration: none; }
+    .logo span { font-size: 0.8rem; display: block; color: #B0B0B0; letter-spacing: 1px; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a { text-decoration: none; color: #FFFFFF; font-weight: 400; font-size: 0.9rem; transition: 0.2s; }
     .nav-links a:hover { color: #D4AF37; }
@@ -20,15 +21,27 @@
     .hero { display: flex; align-items: center; justify-content: space-between; min-height: 80vh; gap: 60px; padding: 40px 0; }
     .hero-content { flex: 1; }
     .hero-label { font-size: 0.8rem; letter-spacing: 4px; color: #D4AF37; margin-bottom: 20px; text-transform: uppercase; }
-    .hero-content h1 { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 500; line-height: 1.1; margin-bottom: 25px; color: #FFFFFF; }
+    .hero-content h1 { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 500; line-height: 1.1; margin-bottom: 25px; color: #FFFFFF; }
     .hero-content p { font-size: 1rem; line-height: 1.6; color: #CCCCCC; margin-bottom: 35px; max-width: 85%; }
-    .btn-group { display: flex; gap: 20px; }
-    .btn-primary { background: #D4AF37; border: none; color: #0A0A0A; padding: 14px 35px; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: 0.3s; font-weight: 600; }
+    .btn-group { display: flex; gap: 20px; flex-wrap: wrap; }
+    .btn-primary { background: #D4AF37; border: none; color: #0A0A0A; padding: 14px 35px; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: 0.3s; font-weight: 600; border-radius: 40px; }
     .btn-primary:hover { background: #E8D174; }
-    .btn-secondary { background: transparent; border: 1px solid #D4AF37; color: #D4AF37; padding: 14px 35px; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
+    .btn-secondary { background: transparent; border: 1px solid #D4AF37; color: #D4AF37; padding: 14px 35px; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: 0.3s; border-radius: 40px; }
     .btn-secondary:hover { background: #D4AF37; color: #0A0A0A; }
     .hero-image { flex: 1; background: #1A1A1A; border-radius: 8px; overflow: hidden; aspect-ratio: 1 / 1; }
     .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+    
+    /* Contact Info Section */
+    .contact-info-section { background: #141414; border-radius: 16px; padding: 30px 40px; margin: 40px 0; border: 1px solid rgba(212, 175, 55, 0.2); }
+    .contact-info-section h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: #D4AF37; margin-bottom: 20px; text-align: center; }
+    .contact-details { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .contact-item { display: flex; align-items: center; gap: 12px; color: #CCCCCC; font-size: 0.9rem; }
+    .contact-item i { color: #D4AF37; font-size: 1.2rem; width: 25px; }
+    .contact-item a { color: #CCCCCC; text-decoration: none; transition: 0.3s; }
+    .contact-item a:hover { color: #D4AF37; }
+    
+    .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer; transition: 0.3s; z-index: 1000; text-decoration: none; }
+    .whatsapp-float:hover { transform: scale(1.05); background: #128C7E; }
     
     footer { border-top: 1px solid #222; text-align: center; padding: 40px 0; margin-top: 60px; color: #666; font-size: 0.8rem; }
     
@@ -37,8 +50,9 @@
       .hero { flex-direction: column; text-align: center; }
       .hero-content p { max-width: 100%; }
       .btn-group { justify-content: center; }
-      .hero-content h1 { font-size: 2.8rem; }
+      .hero-content h1 { font-size: 2.5rem; }
       .nav-links { gap: 1.2rem; margin-top: 15px; }
+      .contact-details { flex-direction: column; align-items: center; gap: 15px; }
     }
   </style>
 </head>
@@ -46,7 +60,7 @@
 
 <div class="container">
   <nav>
-    <a href="index.html" class="logo">SPARKLE RESIN</a>
+    <a href="index.html" class="logo">SPARKLE RESIN ART<br><span>by Amatullah</span></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="gallery.html">Gallery</a></li>
@@ -58,7 +72,7 @@
 
   <div class="hero">
     <div class="hero-content">
-      <div class="hero-label">SPARKLE RESIN</div>
+      <div class="hero-label">SPARKLE RESIN ART</div>
       <h1>HANDCRAFTED<br>RESIN ART<br>CREATIONS</h1>
       <p>Unique handmade resin trays, wall art, name plates, and customized creations crafted with passion to turn your memories into timeless art.</p>
       <div class="btn-group">
@@ -71,9 +85,25 @@
     </div>
   </div>
 
+  <!-- Contact Details Section -->
+  <div class="contact-info-section">
+    <h3>Connect With Me</h3>
+    <div class="contact-details">
+      <div class="contact-item"><i class="fab fa-instagram"></i> <a href="https://instagram.com/sparkle_resin_art_by_amatullah" target="_blank">@sparkle_resin_art_by_amatullah</a></div>
+      <div class="contact-item"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/9184898953611" target="_blank">+91 84889 53611</a></div>
+      <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:khetiamtullah188@gmail.com">khetiamtullah188@gmail.com</a></div>
+      <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Porbandar, Gujarat</div>
+    </div>
+  </div>
+
   <footer>
-    <p>© 2025 Sparkle Resin — Handcrafted with Love in Porbandar</p>
+    <p>© 2025 Sparkle Resin Art by Amatullah — Handcrafted with Love in Porbandar</p>
   </footer>
 </div>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/9184898953611?text=Hello%20Amatullah%2C%20I%20have%20a%20question%20about%20your%20resin%20art" target="_blank" class="whatsapp-float">
+  <i class="fab fa-whatsapp"></i>
+</a>
 </body>
 </html>
