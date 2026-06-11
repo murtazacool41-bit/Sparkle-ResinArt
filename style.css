@@ -5,14 +5,9 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #fefaf5;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #fefaf5;
     color: #2c2418;
-    line-height: 1.4;
-}
-
-.site-wrapper {
-    background-color: #fefaf5;
 }
 
 .container {
@@ -21,123 +16,104 @@ body {
     padding: 0 24px;
 }
 
-/* Header exactly as screenshot */
+/* Top bar */
+.top-bar {
+    background: #3e2c1f;
+    color: #fef0e5;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 0.85rem;
+}
+
+/* Header */
 header {
+    padding: 20px 0;
     border-bottom: 1px solid #e5dbd0;
-    padding: 28px 0 16px;
 }
 
 .header-flex {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
 }
 
 .logo h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 500;
-    letter-spacing: -0.02em;
     color: #3e2c1f;
 }
 
-.logo p {
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    color: #7a6852;
-    margin-top: 6px;
-}
-
-nav a {
+.header-actions a {
+    margin-left: 24px;
     text-decoration: none;
     color: #2c2418;
     font-weight: 500;
-    margin-left: 32px;
-    font-size: 1rem;
 }
 
-nav a.active {
-    color: #c28a5c;
-    border-bottom: 2px solid #c28a5c;
-    padding-bottom: 4px;
+.call-btn {
+    background: #c28a5c;
+    color: white !important;
+    padding: 8px 18px;
+    border-radius: 40px;
 }
 
-/* Hero section */
-.hero {
+/* Hero banner */
+.hero-banner {
+    background: #f7efe7;
+    margin: 32px 0 48px;
+    border-radius: 48px;
+    padding: 48px 0;
+}
+
+.hero-grid {
     display: flex;
-    flex-wrap: wrap;
-    gap: 48px;
     align-items: center;
-    padding: 60px 0 40px;
+    gap: 48px;
+    flex-wrap: wrap;
 }
 
-.hero-text {
+.hero-content {
     flex: 1;
 }
 
-.badge {
+.tag {
     font-size: 0.8rem;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #b97f4b;
-    margin-bottom: 16px;
-    display: block;
 }
 
-.hero-text h2 {
-    font-size: 3.2rem;
-    font-weight: 500;
+.hero-content h1 {
+    font-size: 3rem;
+    margin: 16px 0;
     line-height: 1.2;
-    margin-bottom: 20px;
-    color: #3e2c1f;
-}
-
-.hero-text p {
-    font-size: 1.1rem;
-    color: #5e4e3a;
-    margin-bottom: 32px;
-    max-width: 500px;
 }
 
 .hero-image {
     flex: 1;
-    background: #ece2d8;
-    min-height: 280px;
+    background: #e0cfc0;
     border-radius: 32px;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23c28a5c" width="60px" height="60px"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 60px;
+    min-height: 280px;
+    background-image: radial-gradient(circle at 30% 40%, #c28a5c20 2%, transparent 2%);
+    background-size: 28px 28px;
 }
 
 /* Buttons */
-.btn-group {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-
-.btn-primary, .btn-outline, .btn-light {
-    padding: 12px 32px;
-    font-weight: 600;
-    border-radius: 40px;
-    cursor: pointer;
-    font-size: 1rem;
-    text-decoration: none;
+.btn-primary, .btn-outline, .btn-small {
     display: inline-block;
-    text-align: center;
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 16px;
     transition: 0.2s;
-    border: none;
 }
 
 .btn-primary {
-    background-color: #c28a5c;
+    background: #c28a5c;
     color: white;
-}
-
-.btn-primary:hover {
-    background-color: #a86f45;
+    border: none;
 }
 
 .btn-outline {
@@ -146,242 +122,163 @@ nav a.active {
     color: #c28a5c;
 }
 
-.btn-outline:hover {
-    background-color: #c28a5c10;
-}
-
-.btn-light {
-    background-color: #fef3e6;
-    color: #3e2c1f;
-}
-
-/* Filter bar */
-.filter-bar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px 28px;
-    margin: 48px 0 32px;
-    padding: 12px 0;
-    border-bottom: 1px solid #e5dbd0;
-    border-top: 1px solid #e5dbd0;
-}
-
-.filter-btn {
-    background: none;
-    border: none;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #6b5a48;
-    cursor: pointer;
-    padding: 6px 0;
-}
-
-.filter-btn.active {
+.btn-small {
+    padding: 6px 18px;
+    font-size: 0.85rem;
+    background: #c28a5c20;
     color: #c28a5c;
-    border-bottom: 2px solid #c28a5c;
 }
 
-/* Product grids */
+/* Features */
+.features {
+    margin: 64px 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.features-grid, .reviews-grid, .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+}
+
+.feature-card {
+    background: white;
+    padding: 32px 24px;
+    border-radius: 28px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    border: 1px solid #f0e3d8;
+}
+
+/* Products */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 40px 24px;
-    margin: 40px 0;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 32px;
+    margin: 32px 0;
 }
 
 .product-card {
-    text-align: center;
-    background: transparent;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid #f0e3d8;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
 }
 
 .product-img {
     background: #ede3d9;
-    border-radius: 24px;
-    aspect-ratio: 1 / 1;
-    width: 100%;
-    margin-bottom: 16px;
-    background-image: radial-gradient(circle at 30% 35%, #e0cfc0 2%, transparent 2.5%);
-    background-size: 24px 24px;
+    aspect-ratio: 1;
+    background-image: radial-gradient(circle at 20% 30%, #e0cfc0 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
 }
 
-.product-title {
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin-bottom: 6px;
-}
-
-.product-category, .price-tag {
-    font-size: 0.8rem;
-    color: #b68b62;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.product-info {
+    padding: 16px;
 }
 
 .price-tag {
-    margin-top: 6px;
-    font-weight: 500;
+    color: #c28a5c;
+    font-weight: 600;
+    margin-top: 8px;
 }
 
-/* Signature section */
-.signature {
-    background: #f7f0e8;
-    border-radius: 48px;
-    padding: 56px 24px;
-    margin: 64px 0;
-    text-align: center;
-}
-
-.signature h3 {
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 16px;
-}
-
-.pillars {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 32px;
-    margin: 40px 0 20px;
-}
-
-.pillars span {
-    font-size: 1.1rem;
-    font-weight: 500;
-    background: white;
-    padding: 12px 28px;
-    border-radius: 60px;
-    color: #6b4c2c;
-}
-
-/* Discover row */
-.discover-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
+/* Highlights */
+.highlights {
     margin: 64px 0;
 }
 
-.discover-card {
+.highlights-flex {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.highlight-card {
     flex: 1;
     background: #f2ebe3;
     border-radius: 32px;
-    padding: 48px 32px;
-    text-align: center;
-}
-
-.discover-card h4 {
-    font-size: 1.7rem;
-    font-weight: 500;
-    margin-bottom: 12px;
-}
-
-/* Office section */
-.office-section {
-    background: #e9dfd4;
-    border-radius: 32px;
-    padding: 56px 32px;
-    text-align: center;
-    margin: 48px 0;
-}
-
-.office-section h3 {
-    font-size: 2rem;
-    margin-bottom: 12px;
-}
-
-/* CTA section */
-.cta-section {
-    background: #3e2c1f;
-    color: white;
-    border-radius: 48px;
-    padding: 64px 32px;
-    text-align: center;
-    margin: 64px 0 48px;
-}
-
-.cta-section h2 {
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 16px;
-}
-
-/* Custom page styles */
-.page-title {
-    font-size: 2rem;
-    margin: 40px 0 24px;
-    font-weight: 500;
-}
-
-.custom-hero {
-    text-align: center;
-    margin: 48px 0 32px;
-}
-
-.custom-hero h2 {
-    font-size: 2.2rem;
-    font-weight: 500;
-}
-
-.custom-contact-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 48px;
-    margin: 40px 0 64px;
-}
-
-.contact-info-card, .inquiry-form {
-    flex: 1;
-    background: #f7f0e8;
     padding: 32px;
-    border-radius: 32px;
-}
-
-.inquiry-form input, .inquiry-form select, .inquiry-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 12px 0;
-    border: 1px solid #ddd0c0;
-    border-radius: 24px;
-    font-family: inherit;
-    background: white;
-}
-
-.customization-badge {
-    margin-top: 24px;
-    background: #e9dfd4;
-    padding: 12px;
-    border-radius: 60px;
     text-align: center;
+}
+
+.highlight-card .price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 16px 0;
+    color: #b97f4b;
+}
+
+/* Reviews */
+.reviews {
+    background: #fcf6f0;
+    padding: 64px 0;
+    margin: 32px 0;
+}
+
+.review-card {
+    background: white;
+    padding: 24px;
+    border-radius: 24px;
+}
+
+/* Blog */
+.blog-img {
+    background: #dccfc2;
+    height: 180px;
+    border-radius: 20px;
+    margin-bottom: 16px;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 40px 0 56px;
-    border-top: 1px solid #e5dbd0;
-    margin-top: 32px;
-    color: #7a6852;
-    font-size: 0.85rem;
+    background: #2e241b;
+    color: #e0cfc0;
+    padding: 48px 0 24px;
+    margin-top: 64px;
 }
 
-footer a {
-    color: #7a6852;
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.footer-grid a {
+    color: #e0cfc0;
     text-decoration: none;
 }
 
-/* Responsive */
+.copyright {
+    text-align: center;
+    margin-top: 48px;
+    font-size: 0.8rem;
+    border-top: 1px solid #4a3a2c;
+    padding-top: 24px;
+}
+
+.center-btn {
+    text-align: center;
+    margin: 24px 0;
+}
+
 @media (max-width: 700px) {
-    .hero-text h2 {
-        font-size: 2.2rem;
+    .hero-content h1 {
+        font-size: 2rem;
     }
     .header-flex {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    nav a {
-        margin: 0 12px;
+        gap: 16px;
     }
 }
